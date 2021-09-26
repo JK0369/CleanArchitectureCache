@@ -10,6 +10,7 @@ import Foundation
 protocol CityUseCase {
     @discardableResult
     func execute(requestValue: CityUseCaseRequestValue,
+                 cached: @escaping (([City]) -> Void),
                  completion: @escaping (Result<[City], Error>) -> Void) -> Cancellable?
 }
 
@@ -22,10 +23,13 @@ final class CityUseCaseImpl: CityUseCase {
         self.cityRepository = cityRepository
     }
 
-    func execute(requestValue: CityUseCaseRequestValue, completion: @escaping (Result<[City], Error>) -> Void) -> Cancellable? {
+    func execute(requestValue: CityUseCaseRequestValue,
+                 cached: @escaping (([City]) -> Void),
+                 completion: @escaping (Result<[City], Error>) -> Void) -> Cancellable? {
 
         return cityRepository.fetchCities(order: requestValue.order,
-                                         sortOrder: requestValue.sortOrder) { result in
+                                          sortOrder: requestValue.sortOrder,
+                                          cached: cached) { result in
             if case .success = result {
                 // TODO: cache 저장
             }

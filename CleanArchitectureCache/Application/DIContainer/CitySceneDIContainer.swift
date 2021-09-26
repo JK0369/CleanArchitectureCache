@@ -15,6 +15,7 @@ final class CitySceneDIContainer {
     }
 
     private let dependencies: Dependencies
+    private let cityResponseCache = UserDefaultsCityStorage(maxStorageLimit: 10)
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -27,7 +28,7 @@ final class CitySceneDIContainer {
     // Private
 
     private func makeCityRepository() -> CityRepository {
-        return CityRepositoryImpl(dataTransferService: dependencies.cityDataTransferService)
+        return CityRepositoryImpl(dataTransferService: dependencies.cityDataTransferService, cache: cityResponseCache)
     }
 
     private func makeCityUseCase() -> CityUseCase {

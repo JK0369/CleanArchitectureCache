@@ -8,5 +8,7 @@
 import Foundation
 
 protocol CityResponseStorage {
-    func fetchResponse(maxCount: Int, completion: @escaping (Result<[City], Error>) -> Void)
+    func getResponse(maxCount: Int, completion: @escaping (Result<[City], Error>) -> Void)
+    func save(cities: [City])
 }
+

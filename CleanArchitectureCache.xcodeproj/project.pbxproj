@@ -27,10 +27,6 @@
 		E015817427008B9B0091EB51 /* CityRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815027008B9B0091EB51 /* CityRepositoryImpl.swift */; };
 		E015817527008B9B0091EB51 /* UserDefaultsCityStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815327008B9B0091EB51 /* UserDefaultsCityStorage.swift */; };
 		E015817627008B9B0091EB51 /* CityUDS+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815527008B9B0091EB51 /* CityUDS+Mapping.swift */; };
-		E015817727008B9B0091EB51 /* CityEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815827008B9B0091EB51 /* CityEntity+Mapping.swift */; };
-		E015817827008B9B0091EB51 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815927008B9B0091EB51 /* CoreDataStorage.swift */; };
-		E015817927008B9B0091EB51 /* CoreDataCityResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815A27008B9B0091EB51 /* CoreDataCityResponseStorage.swift */; };
-		E015817A27008B9B0091EB51 /* CityDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E015815B27008B9B0091EB51 /* CityDataStorage.xcdatamodeld */; };
 		E015817B27008B9B0091EB51 /* CityResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015815E27008B9B0091EB51 /* CityResponseStorage.swift */; };
 		E015817C27008B9B0091EB51 /* CityUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015816127008B9B0091EB51 /* CityUseCase.swift */; };
 		E015817D27008B9B0091EB51 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015816327008B9B0091EB51 /* City.swift */; };
@@ -66,10 +62,6 @@
 		E015815027008B9B0091EB51 /* CityRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityRepositoryImpl.swift; sourceTree = "<group>"; };
 		E015815327008B9B0091EB51 /* UserDefaultsCityStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsCityStorage.swift; sourceTree = "<group>"; };
 		E015815527008B9B0091EB51 /* CityUDS+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CityUDS+Mapping.swift"; sourceTree = "<group>"; };
-		E015815827008B9B0091EB51 /* CityEntity+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CityEntity+Mapping.swift"; sourceTree = "<group>"; };
-		E015815927008B9B0091EB51 /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
-		E015815A27008B9B0091EB51 /* CoreDataCityResponseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCityResponseStorage.swift; sourceTree = "<group>"; };
-		E015815C27008B9B0091EB51 /* CityDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		E015815E27008B9B0091EB51 /* CityResponseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityResponseStorage.swift; sourceTree = "<group>"; };
 		E015816127008B9B0091EB51 /* CityUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityUseCase.swift; sourceTree = "<group>"; };
 		E015816327008B9B0091EB51 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -250,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				E015815227008B9B0091EB51 /* UserDefaultsStorage */,
-				E015815627008B9B0091EB51 /* CoreDataStorage */,
 				E015815D27008B9B0091EB51 /* CityResponseStorage */,
 			);
 			path = PersistentStorage;
@@ -271,25 +262,6 @@
 				E015815527008B9B0091EB51 /* CityUDS+Mapping.swift */,
 			);
 			path = DataMapping;
-			sourceTree = "<group>";
-		};
-		E015815627008B9B0091EB51 /* CoreDataStorage */ = {
-			isa = PBXGroup;
-			children = (
-				E015815727008B9B0091EB51 /* EntityMapping */,
-				E015815927008B9B0091EB51 /* CoreDataStorage.swift */,
-				E015815A27008B9B0091EB51 /* CoreDataCityResponseStorage.swift */,
-				E015815B27008B9B0091EB51 /* CityDataStorage.xcdatamodeld */,
-			);
-			path = CoreDataStorage;
-			sourceTree = "<group>";
-		};
-		E015815727008B9B0091EB51 /* EntityMapping */ = {
-			isa = PBXGroup;
-			children = (
-				E015815827008B9B0091EB51 /* CityEntity+Mapping.swift */,
-			);
-			path = EntityMapping;
 			sourceTree = "<group>";
 		};
 		E015815D27008B9B0091EB51 /* CityResponseStorage */ = {
@@ -453,18 +425,14 @@
 				E015817127008B9B0091EB51 /* CityRequestDTO+Mapping.swift in Sources */,
 				E015816827008B9B0091EB51 /* NetworkService.swift in Sources */,
 				E015816B27008B9B0091EB51 /* Cancellable.swift in Sources */,
-				E015817727008B9B0091EB51 /* CityEntity+Mapping.swift in Sources */,
 				E015817C27008B9B0091EB51 /* CityUseCase.swift in Sources */,
 				E015816727008B9B0091EB51 /* DataTransferService.swift in Sources */,
 				E015816927008B9B0091EB51 /* NetworkConfigurable.swift in Sources */,
-				E015817827008B9B0091EB51 /* CoreDataStorage.swift in Sources */,
 				E015817027008B9B0091EB51 /* APIEndpoints.swift in Sources */,
-				E015817927008B9B0091EB51 /* CoreDataCityResponseStorage.swift in Sources */,
 				E015817E27008B9B0091EB51 /* CityRepository.swift in Sources */,
 				E015817627008B9B0091EB51 /* CityUDS+Mapping.swift in Sources */,
 				E015817427008B9B0091EB51 /* CityRepositoryImpl.swift in Sources */,
 				E015816F27008B9B0091EB51 /* CitySceneCoordinator.swift in Sources */,
-				E015817A27008B9B0091EB51 /* CityDataStorage.xcdatamodeld in Sources */,
 				E015812227008B000091EB51 /* AppDelegate.swift in Sources */,
 				E015817527008B9B0091EB51 /* UserDefaultsCityStorage.swift in Sources */,
 				E015816C27008B9B0091EB51 /* CityViewModel.swift in Sources */,
@@ -722,19 +690,6 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		E015815B27008B9B0091EB51 /* CityDataStorage.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E015815C27008B9B0091EB51 /* CityDataStorage.xcdatamodel */,
-			);
-			currentVersion = E015815C27008B9B0091EB51 /* CityDataStorage.xcdatamodel */;
-			path = CityDataStorage.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E015811627008B000091EB51 /* Project object */;
 }

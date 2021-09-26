@@ -36,13 +36,17 @@ final class UserDefaultsCityStorage {
 }
 
 extension UserDefaultsCityStorage: CityResponseStorage {
-    func fetchResponse(maxCount: Int, completion: @escaping (Result<[City], Error>) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+    func getResponse(maxCount: Int, completion: @escaping (Result<[City], Error>) -> Void) {
+        DispatchQueue.main.async { [weak self] in
             guard var cities = self?.fetchCities() else { return }
 
             let maxStorageLimit = self?.maxStorageLimit ?? 0
             cities = cities.count < maxStorageLimit ? cities : Array(cities[0..<maxCount])
             completion(.success(cities))
         }
+    }
+
+    func save(cities: [City]) {
+        persist(cities: cities)
     }
 }

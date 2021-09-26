@@ -20,5 +20,6 @@ protocol CityRepository {
 
     func fetchCities(order: Order,
                      sortOrder: SortOrder,
+                     cached: @escaping (([City]) -> Void),
                      completion: @escaping (Result<[City], Error>) -> Void) -> Cancellable?
 }

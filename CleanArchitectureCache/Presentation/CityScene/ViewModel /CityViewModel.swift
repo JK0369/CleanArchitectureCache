@@ -36,10 +36,11 @@ final class CityViewModelImpl: CityViewModel {
     // Input
 
     func viewDidLoad() {
-        let _ = cityUseCase.execute(requestValue: .init(order: .revenue, sortOrder: .desc)) { [weak self] result in
+        let _ = cityUseCase.execute(requestValue: .init(order: .revenue, sortOrder: .desc),
+                                    cached: appendCities(_:)) { [weak self] result in
             switch result {
             case .success(let cities):
-                self?.updateCities(cities)
+                self?.appendCities(cities)
             case .failure(let error):
                 self?.handle(error: error)
             }
@@ -48,8 +49,9 @@ final class CityViewModelImpl: CityViewModel {
 
     // Private
 
-    private func updateCities(_ cities: [City]) {
-        items.accept(cities)
+    private func appendCities(_ cities: [City]) {
+        let newCities = cities.filter { !self.items.value.contains($0) }
+        items.accept(newCities)
     }
 
     private func handle(error: Error) {
